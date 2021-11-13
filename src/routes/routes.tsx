@@ -1,3 +1,5 @@
+import { Redirect } from 'react-router';
+
 export default [
   {
     path: '/movies',
@@ -10,6 +12,13 @@ export default [
     public: true,
     exact: true,
     component: () => () => {},
+  },
+  {
+    path: '/',
+    public: true,
+    exact: true,
+    // temporary solving. Maybe homepage could be added later.
+    component: () => <Redirect to="/movies" />,
   },
   {
     path: '*',
