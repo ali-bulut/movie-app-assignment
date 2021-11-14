@@ -8,6 +8,7 @@ import { useSetHeaderText } from '../../hooks/Movies/MoviesPageHooks';
 
 import '../../styles/Movies/MoviesPage.css';
 import Texts from '../../constants/Texts';
+import MovieCard from '../../components/Movies/MoviesPage/MovieCard';
 
 interface Params {
   type?: MovieType;
@@ -27,7 +28,15 @@ const MoviesPage: React.FC = () => {
           <FilterPanel filterName={Texts.whereToWatch} />
           <FilterButton />
         </Col>
-        <Col lg="9"></Col>
+        <Col lg="9">
+          <Row xs={1} lg={5} md={3} className="g-3">
+            {Array.from({ length: 12 }).map((_, idx) => (
+              <Col key={idx}>
+                <MovieCard />
+              </Col>
+            ))}
+          </Row>
+        </Col>
       </Row>
     </>
   );
