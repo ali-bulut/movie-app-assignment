@@ -1,3 +1,10 @@
+.main-panel {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 .main-navbar {
   background-color: #032541;
   padding-top: 0.65rem !important;
@@ -68,5 +75,40 @@
   .main-container {
     padding-left: var(--bs-gutter-x, 0.75rem) !important;
     padding-right: var(--bs-gutter-x, 0.75rem) !important;
+  }
+
+  .main-panel-width {
+    padding-left: var(--bs-gutter-x, 0.75rem) !important;
+    padding-right: var(--bs-gutter-x, 0.75rem) !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .main-panel-width {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-panel-width {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-panel-width {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-panel-width {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-panel-width {
+    max-width: 1320px;
   }
 }

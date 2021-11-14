@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/img/logo.svg';
 import Texts from '../../constants/Texts';
@@ -19,9 +20,15 @@ const MainNavbar = () => {
               title={<span className="nav-link-text">{Texts.movies}</span>}
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item>{Texts.popular}</NavDropdown.Item>
-              <NavDropdown.Item>{Texts.upcoming}</NavDropdown.Item>
-              <NavDropdown.Item>{Texts.topRated}</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/movies">
+                {Texts.popular}
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/movies/upcoming">
+                {Texts.upcoming}
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/movies/top-rated">
+                {Texts.topRated}
+              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="nav-link-text margin-right-10">{Texts.tvShows}</Nav.Link>
             <Nav.Link className="nav-link-text margin-right-10">{Texts.people}</Nav.Link>
