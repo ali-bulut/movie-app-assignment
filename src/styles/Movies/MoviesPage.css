@@ -1,5 +1,6 @@
 .movies-panel {
   margin-top: 25px !important;
+  margin-bottom: 15px !important;
 }
 
 .filter-panel {
@@ -38,7 +39,7 @@
   border: 1px solid #e3e3e3 !important;
   border-radius: 8px !important;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-  margin-bottom: 10px;
+  height: 100%;
 }
 
 .movie-body {

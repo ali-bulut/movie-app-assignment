@@ -7,7 +7,7 @@ import Texts from '../../constants/Texts';
 
 const MainNavbar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="main-navbar">
+    <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="main-navbar">
       <Container className="main-container">
         <Navbar.Brand>
           <img alt="logo" src={Logo} width="150" height="30" className="d-inline-block align-top main-logo" />

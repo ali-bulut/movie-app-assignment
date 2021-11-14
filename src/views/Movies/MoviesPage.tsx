@@ -1,14 +1,16 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+
 import FilterButton from '../../components/Movies/MoviesPage/FilterButton';
 import FilterPanel from '../../components/Movies/MoviesPage/FilterPanel';
 import MovieType from '../../util/enums/MovieType';
-import { useSetHeaderText } from '../../hooks/Movies/MoviesPageHooks';
-
-import '../../styles/Movies/MoviesPage.css';
+import { useFetchMovies, useSetHeaderText } from '../../hooks/Movies/MoviesPageHooks';
 import Texts from '../../constants/Texts';
 import MovieCard from '../../components/Movies/MoviesPage/MovieCard';
+import CustomSpinner from '../../components/Common/CustomSpinner';
+
+import '../../styles/Movies/MoviesPage.css';
 
 interface Params {
   type?: MovieType;
@@ -16,7 +18,15 @@ interface Params {
 
 const MoviesPage: React.FC = () => {
   const { type } = useParams<Params>();
-  let headerText: string = useSetHeaderText(type);
+  let listType = type || MovieType.popular;
+
+  let headerText: string = useSetHeaderText(listType);
+
+  const { moviesData, moviesLoading, moviesLoaded } = useFetchMovies(listType, 1);
+
+  if (moviesLoading && !moviesLoaded) {
+    return <CustomSpinner />;
+  }
 
   return (
     <>
@@ -30,11 +40,12 @@ const MoviesPage: React.FC = () => {
         </Col>
         <Col lg="9">
           <Row xs={1} lg={5} md={3} className="g-3">
-            {Array.from({ length: 12 }).map((_, idx) => (
-              <Col key={idx}>
-                <MovieCard />
-              </Col>
-            ))}
+            {moviesData.results !== undefined &&
+              moviesData.results.map((movie, idx) => (
+                <Col key={idx}>
+                  <MovieCard movie={movie} />
+                </Col>
+              ))}
           </Row>
         </Col>
       </Row>
