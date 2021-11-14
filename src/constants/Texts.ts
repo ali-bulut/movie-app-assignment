@@ -15,4 +15,5 @@ export default {
   sort: 'Sort',
   filters: 'Filters',
   whereToWatch: 'Where to Watch',
+  somethingWrong: 'Something went wrong!',
 };
