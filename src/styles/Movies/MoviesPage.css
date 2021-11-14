@@ -1,0 +1,39 @@
+.movies-panel {
+  margin-top: 25px !important;
+}
+
+.filter-panel {
+  border: 1px solid #e3e3e3;
+  max-width: 260px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter-name {
+  padding: 14px 16px;
+}
+
+.filter-text {
+  font-weight: 600;
+}
+
+.filter-button {
+  width: 260px;
+  border-radius: 20px !important;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.5) !important;
+  background-color: #ececec !important;
+  border: 0px !important;
+  font-weight: 600 !important;
+  height: 45px;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .filter-panel {
+    max-width: 100%;
+  }
+}

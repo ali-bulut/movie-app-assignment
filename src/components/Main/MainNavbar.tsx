@@ -2,6 +2,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/img/logo.svg';
+import Icons from '../../constants/Icons';
 import Texts from '../../constants/Texts';
 
 const MainNavbar = () => {
@@ -36,7 +37,7 @@ const MainNavbar = () => {
           </Nav>
           <Nav>
             <Nav.Link className="nav-link-text align-items margin-right-10">
-              <i className="material-icons nav-link-plus">add</i>
+              <i className="material-icons nav-link-plus">{Icons.plus}</i>
             </Nav.Link>
             <Nav.Link className="nav-link-text align-items margin-right-10">
               <div className="align-items language-box">
@@ -46,7 +47,7 @@ const MainNavbar = () => {
             <Nav.Link className="nav-link-text align-items margin-right-10">{Texts.login}</Nav.Link>
             <Nav.Link className="nav-link-text align-items margin-right-10">{Texts.joinTmdb}</Nav.Link>
             <Nav.Link className="align-items">
-              <i className="material-icons search-icon">search</i>
+              <i className="material-icons search-icon">{Icons.search}</i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

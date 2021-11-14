@@ -1,11 +1,12 @@
 import { Redirect } from 'react-router';
+import MoviesPage from '../views/Movies/MoviesPage';
 
 export default [
   {
-    path: '/movies',
+    path: '/movies/:type?',
     public: true,
     exact: true,
-    component: () => () => {},
+    component: () => <MoviesPage />,
   },
   {
     path: '/movies/:id',

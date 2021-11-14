@@ -8,4 +8,11 @@ export default {
   more: 'More',
   login: 'Login',
   joinTmdb: 'Join TMDB',
+  popularMovies: 'Popular Movies',
+  upcomingMovies: 'Upcoming Movies',
+  topRatedMovies: 'Top Rated Movies',
+  search: 'Search',
+  sort: 'Sort',
+  filters: 'Filters',
+  whereToWatch: 'Where to Watch',
 };

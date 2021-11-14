@@ -63,6 +63,18 @@
   align-items: center !important;
 }
 
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
