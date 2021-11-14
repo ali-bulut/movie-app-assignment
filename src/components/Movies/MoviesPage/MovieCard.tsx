@@ -2,9 +2,13 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { easeQuadInOut } from 'd3-ease';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+import AnimatedProgressbarProvider from './AnimatedProgressbarProvider';
 import Icons from '../../../constants/Icons';
 
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-circular-progressbar/dist/styles.css';
 
 interface Props {
@@ -43,23 +47,37 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
     <Card className="movie-card">
       <i className="material-icons movie-icon">{Icons.threeDotsHorizantal}</i>
       <Card.Img
+        as={LazyLoadImage}
         variant="top"
         className="movie-image"
+        effect="blur"
         src={`${process.env.REACT_APP_POSTER_PATH}/${movie.poster_path}`}
       />
       <Card.Body className="movie-body">
         <div className="movie-percantage-progressbar">
-          <CircularProgressbarWithChildren
-            value={movie.vote_average * 10}
-            styles={ProgressbarStyles}
-            strokeWidth={6}
-            background
+          <AnimatedProgressbarProvider
+            valueStart={0}
+            valueEnd={movie.vote_average * 10}
+            duration={2}
+            easingFunction={easeQuadInOut}
           >
-            <div className="movie-percantage-text-container">
-              <strong>{movie.vote_average * 10}</strong>
-              <span className="movie-percantage-text">%</span>
-            </div>
-          </CircularProgressbarWithChildren>
+            {(value: number) => {
+              const roundedValue = Math.round(value);
+              return (
+                <CircularProgressbarWithChildren
+                  value={roundedValue}
+                  styles={ProgressbarStyles}
+                  strokeWidth={6}
+                  background
+                >
+                  <div className="movie-percantage-text-container">
+                    <strong>{roundedValue}</strong>
+                    <span className="movie-percantage-text">%</span>
+                  </div>
+                </CircularProgressbarWithChildren>
+              );
+            }}
+          </AnimatedProgressbarProvider>
         </div>
         <Card.Title className="movie-name-container">
           <Link to="/" className="movie-name-text">
