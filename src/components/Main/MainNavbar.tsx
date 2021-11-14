@@ -27,7 +27,7 @@ const MainNavbar = () => {
               <NavDropdown.Item as={Link} to="/movies/upcoming">
                 {Texts.upcoming}
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/movies/top-rated">
+              <NavDropdown.Item as={Link} to="/movies/top_rated">
                 {Texts.topRated}
               </NavDropdown.Item>
             </NavDropdown>

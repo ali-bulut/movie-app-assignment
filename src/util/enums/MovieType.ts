@@ -1,7 +1,7 @@
 enum MovieType {
   popular = 'popular',
   upcoming = 'upcoming',
-  topRated = 'top-rated',
+  topRated = 'top_rated',
 }
 
 export default MovieType;
