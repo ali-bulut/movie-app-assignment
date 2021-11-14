@@ -1,4 +1,5 @@
 import React from 'react';
+import MainFooter from '../components/Main/MainFooter';
 
 import MainNavbar from '../components/Main/MainNavbar';
 import MainPanel from '../components/Main/MainPanel';
@@ -14,6 +15,7 @@ const MainContent: React.FC<Props> = (props) => {
     <React.Fragment>
       <MainNavbar />
       <MainPanel style={props.style}>{props.children}</MainPanel>
+      <MainFooter />
     </React.Fragment>
   );
 };

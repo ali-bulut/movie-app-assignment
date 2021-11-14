@@ -124,3 +124,49 @@
     max-width: 1320px;
   }
 }
+
+footer {
+  background-color: #03233e;
+  height: 100%;
+}
+
+footer h3 {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+}
+
+footer ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+footer ul li {
+  list-style: none;
+  color: white;
+}
+
+footer ul li a {
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+}
+
+footer a.join-link {
+  position: relative;
+  top: 20px;
+  right: 90px;
+  background-color: white;
+  color: rgba(1, 180, 228, 1);
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-decoration: none;
+  width: 221px;
+  margin-top: 25px;
+}
