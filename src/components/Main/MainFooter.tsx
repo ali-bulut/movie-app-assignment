@@ -8,7 +8,7 @@ const MainFooter = () => {
         <Row>
           <Col lg="3"></Col>
           <Col lg="9">
-            <Row lg={5} md={1} className="g-3">
+            <Row lg={5} md={1} xs={1} className="g-3">
               <Col>
                 <img src={FooterImg} width="130" height="94" />
                 <div className="join">
