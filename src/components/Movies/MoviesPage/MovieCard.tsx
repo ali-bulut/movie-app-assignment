@@ -10,6 +10,7 @@ import Icons from '../../../constants/Icons';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-circular-progressbar/dist/styles.css';
+import history from '../../../history';
 
 interface Props {
   movie: {
@@ -52,6 +53,7 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
         className="movie-image"
         effect="blur"
         src={`${process.env.REACT_APP_POSTER_PATH}/${movie.poster_path}`}
+        onClick={() => history.push('/movies/movie_detail/' + movie.id)}
       />
       <Card.Body className="movie-body">
         <div className="movie-percantage-progressbar">
@@ -80,7 +82,7 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
           </AnimatedProgressbarProvider>
         </div>
         <Card.Title className="movie-name-container">
-          <Link to="/" className="movie-name-text">
+          <Link to={'/movies/movie_detail/' + movie.id} className="movie-name-text">
             {movie.title}
           </Link>
         </Card.Title>

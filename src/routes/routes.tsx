@@ -1,4 +1,5 @@
 import { Redirect } from 'react-router';
+import MovieDetailPage from '../views/Movies/MovieDetailPage';
 import MoviesPage from '../views/Movies/MoviesPage';
 
 export default [
@@ -9,10 +10,10 @@ export default [
     component: () => <MoviesPage />,
   },
   {
-    path: '/movies/:id',
+    path: '/movies/movie_detail/:id',
     public: true,
     exact: true,
-    component: () => () => {},
+    component: () => <MovieDetailPage />,
   },
   {
     path: '/',
