@@ -6,12 +6,7 @@ interface Props {
 
 const MainPanel: React.FC<Props> = (props) => {
   return (
-    <div
-      style={{
-        ...{ paddingLeft: 22, marginTop: 120, paddingRight: 22 },
-        ...props.style,
-      }}
-    >
+    <div className="main-panel main-panel-width" style={props.style}>
       {props.children}
     </div>
   );

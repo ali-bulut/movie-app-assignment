@@ -1,0 +1,114 @@
+.movies-panel {
+  margin-top: 25px !important;
+  margin-bottom: 15px !important;
+}
+
+.filter-panel {
+  border: 1px solid #e3e3e3;
+  max-width: 260px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter-name {
+  padding: 14px 16px;
+}
+
+.filter-text {
+  font-weight: 600;
+}
+
+.filter-button {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 20px !important;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.5) !important;
+  background-color: #ececec !important;
+  border: 0px !important;
+  font-weight: 600 !important;
+  height: 45px;
+  pointer-events: none;
+  margin-bottom: 20px;
+}
+
+.movie-card {
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  height: 100%;
+}
+
+.movie-body {
+  position: relative;
+}
+
+.movie-icon {
+  opacity: 0.6;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+}
+
+.movie-icon:hover {
+  color: deepskyblue;
+}
+
+.movie-image {
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  cursor: pointer;
+}
+
+.movie-percantage-progressbar {
+  width: 37px;
+  position: absolute;
+  top: -19px;
+  left: 10px;
+}
+
+.movie-percantage-text-container {
+  font-size: 12px;
+  color: white;
+  margin-right: 3px;
+}
+
+.movie-percantage-text {
+  font-size: 5px;
+  position: absolute;
+}
+
+.movie-name-container {
+  margin-bottom: 0px !important;
+  margin-top: 8px !important;
+}
+
+.movie-name-text {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.movie-name-text:hover {
+  color: rgb(1, 180, 228);
+}
+
+.movie-date-text {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 992px) {
+  .filter-panel {
+    max-width: 100%;
+  }
+
+  .filter-button {
+    max-width: 100%;
+  }
+}
