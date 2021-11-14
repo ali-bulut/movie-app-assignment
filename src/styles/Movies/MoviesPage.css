@@ -21,7 +21,8 @@
 }
 
 .filter-button {
-  width: 260px;
+  width: 100%;
+  max-width: 260px;
   border-radius: 20px !important;
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.5) !important;
@@ -34,6 +35,10 @@
 
 @media (max-width: 992px) {
   .filter-panel {
+    max-width: 100%;
+  }
+
+  .filter-button {
     max-width: 100%;
   }
 }
