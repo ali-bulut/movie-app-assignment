@@ -265,3 +265,28 @@
 .mt-100 {
   margin-top: 100px;
 }
+
+.movie-main-info-secondary {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .main-info-container {
+    display: none;
+  }
+  .movie-main-info-secondary {
+    display: block;
+  }
+  .movie-detail-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .movie-main-info-secondary h3,
+  h4,
+  span,
+  p,
+  .movie-trailer-container > i {
+    color: black !important;
+  }
+}

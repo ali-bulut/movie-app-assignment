@@ -4,6 +4,7 @@ import CustomSpinner from '../../components/Common/CustomSpinner';
 import MovieBanner from '../../components/Movies/MovieDetailPage/MovieBanner';
 import MovieCastSection from '../../components/Movies/MovieDetailPage/MovieCastSection';
 import MovieInfoSection from '../../components/Movies/MovieDetailPage/MovieInfoSection';
+import MovieMainInfo from '../../components/Movies/MovieDetailPage/MovieMainInfo';
 import { useFetchMovieCredits, useFetchMovieDetail } from '../../hooks/MovieDetail/MovieDetailPageHooks';
 
 import '../../styles/Movies/MovieDetailPage.css';
@@ -33,6 +34,9 @@ const MovieDetailPage = () => {
   return (
     <>
       <MovieBanner movieDetail={movieDetailData} movieCredits={movieCreditsData} />
+      <div className="movie-main-info-secondary">
+        <MovieMainInfo movieCredits={movieCreditsData} movieDetail={movieDetailData} />
+      </div>
       <div className="mt-20">
         <Row>
           <Col lg="9">
