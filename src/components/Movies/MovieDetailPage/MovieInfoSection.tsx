@@ -1,4 +1,16 @@
-const MovieInfoSection = () => {
+import React from 'react';
+import Texts from '../../../constants/Texts';
+import { MovieDetailData } from '../../../hooks/MovieDetail/MovieDetailPageHooks';
+
+interface Props {
+  movieDetail: MovieDetailData;
+}
+
+const formatToCurrency = (amount: number) => {
+  return '$' + amount?.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+};
+
+const MovieInfoSection: React.FC<Props> = ({ movieDetail }) => {
   return (
     <>
       <div>
@@ -10,43 +22,40 @@ const MovieInfoSection = () => {
       </div>
       <div>
         <div className="movie-detail-info-content">
-          <h5 className="movie-detail-info-header">Status</h5>
-          <p className="movie-detail-info-text">Released</p>
+          <h5 className="movie-detail-info-header">{Texts.status}</h5>
+          <p className="movie-detail-info-text">{movieDetail.status}</p>
         </div>
         <div className="movie-detail-info-content">
-          <h5 className="movie-detail-info-header">Original Language</h5>
-          <p className="movie-detail-info-text">English</p>
+          <h5 className="movie-detail-info-header">{Texts.originalLanguage}</h5>
+          <p className="movie-detail-info-text">{movieDetail.original_language?.toUpperCase()}</p>
         </div>
         <div className="movie-detail-info-content">
-          <h5 className="movie-detail-info-header">Budget</h5>
-          <p className="movie-detail-info-text">$150,000,000.00</p>
+          <h5 className="movie-detail-info-header">{Texts.budget}</h5>
+          <p className="movie-detail-info-text">{formatToCurrency(movieDetail.budget)}</p>
         </div>
         <div className="movie-detail-info-content">
-          <h5 className="movie-detail-info-header">Revenue</h5>
-          <p className="movie-detail-info-text">$430,238,384.00</p>
+          <h5 className="movie-detail-info-header">{Texts.revenue}</h5>
+          <p className="movie-detail-info-text">{formatToCurrency(movieDetail.revenue)}</p>
         </div>
 
         <div className="movie-detail-info-content">
-          <h5 className="movie-detail-info-header">Keywords</h5>
+          <h5 className="movie-detail-info-header">{Texts.keywords}</h5>
           <div className="movie-keywords-container">
-            <div className="movie-keyword-content">
-              <span>martial arts</span>
-            </div>
-            <div className="movie-keyword-content">
-              <span>superhero</span>
-            </div>
-            <div className="movie-keyword-content">
-              <span>based on comic</span>
-            </div>
-            <div className="movie-keyword-content">
-              <span>mixed martial arts</span>
-            </div>
-            <div className="movie-keyword-content">
-              <span>marvel cinematic universe (mcu)</span>
-            </div>
-            <div className="movie-keyword-content">
-              <span>marvel comics</span>
-            </div>
+            {
+              // dummy data for keywords
+              [
+                'martial arts',
+                'superhero',
+                'based on comic',
+                'mixed martial arts',
+                'marvel cinematic universe (mcu)',
+                'marvel comics',
+              ].map((x, idx) => (
+                <div key={idx} className="movie-keyword-content">
+                  <span>{x}</span>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
