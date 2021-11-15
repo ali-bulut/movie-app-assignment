@@ -7,7 +7,29 @@ const endpoints = {
     new Promise(async function (resolve, reject) {
       const response = await apiWrapper(`movie/${listType}?page=${page}`, 'GET');
 
-      if (!response) {
+      if (!response || response.success === false) {
+        return reject({ message: Texts.somethingWrong });
+      } else {
+        return resolve(response);
+      }
+    }),
+
+  fetchMovieDetail: (id: number) =>
+    new Promise(async function (resolve, reject) {
+      const response = await apiWrapper(`movie/${id}`, 'GET');
+
+      if (!response || response.success === false) {
+        return reject({ message: Texts.somethingWrong });
+      } else {
+        return resolve(response);
+      }
+    }),
+
+  fetchMovieCredits: (id: number) =>
+    new Promise(async function (resolve, reject) {
+      const response = await apiWrapper(`movie/${id}/credits`, 'GET');
+
+      if (!response || response.success === false) {
         return reject({ message: Texts.somethingWrong });
       } else {
         return resolve(response);
