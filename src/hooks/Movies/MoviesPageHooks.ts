@@ -39,6 +39,7 @@ export const useFetchMovies = (listType: MovieType, page: number) => {
   const moviesLoading: boolean = useSelector((state: RootState) => state.movies.fetchAllLoading);
   const moviesLoaded: boolean = useSelector((state: RootState) => state.movies.fetchAllLoaded);
   const moviesData: MoviesData = useSelector((state: RootState) => state.movies.fetchAllData);
+  const moviesError: any = useSelector((state: RootState) => state.movies.fetchAllError);
 
   useEffect(() => {
     dispatch(fetchMovies(listType, page));
@@ -48,5 +49,6 @@ export const useFetchMovies = (listType: MovieType, page: number) => {
     moviesLoading,
     moviesLoaded,
     moviesData,
+    moviesError,
   };
 };

@@ -22,7 +22,12 @@ const MoviesPage: React.FC = () => {
 
   let headerText: string = useSetHeaderText(listType);
 
-  const { moviesData, moviesLoading, moviesLoaded } = useFetchMovies(listType, 1);
+  const { moviesData, moviesLoading, moviesLoaded, moviesError } = useFetchMovies(listType, 1);
+
+  if (moviesError) {
+    // some error management system could be implemented
+    alert(moviesError);
+  }
 
   if (moviesLoading && !moviesLoaded) {
     return <CustomSpinner />;
@@ -40,12 +45,11 @@ const MoviesPage: React.FC = () => {
         </Col>
         <Col lg="9">
           <Row xs={1} lg={5} md={3} className="g-3">
-            {moviesData.results !== undefined &&
-              moviesData.results.map((movie, idx) => (
-                <Col key={idx}>
-                  <MovieCard movie={movie} />
-                </Col>
-              ))}
+            {moviesData.results?.map((movie, idx) => (
+              <Col key={idx}>
+                <MovieCard movie={movie} />
+              </Col>
+            ))}
           </Row>
         </Col>
       </Row>
