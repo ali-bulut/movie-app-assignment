@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  frontend:
+    container_name: movie-app
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./public/assets:/app/public/assets
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    command: npm start
